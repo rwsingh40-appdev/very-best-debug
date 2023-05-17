@@ -12,9 +12,9 @@
 
 class Comment < ApplicationRecord
   def commenter
-    my_id = self.id
+    author_id = self.author_id
     
-    matching_users = User.where({ :id => my_id })
+    matching_users = User.where({ :id => author_id })
     
     the_user = matching_users.at(0)
     
